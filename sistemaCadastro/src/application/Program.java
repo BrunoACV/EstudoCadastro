@@ -46,16 +46,22 @@ public class Program {
 	}
 
 	public static void login() {
-		System.out.print("Informe o nome de usuário: ");
-		String nome = sc.nextLine();
-		System.out.print("Informe a senha: ");
-		String senha = sc.nextLine();
+		boolean aux = false;
+		do {
+			System.out.print("Informe o nome de usuário: ");
+			String nome = sc.nextLine();
+			System.out.print("Informe a senha: ");
+			String senha = sc.nextLine();
 
-		for (Usuario usuario : list) {
-			if (nome != usuario.getNome() && senha != usuario.getSenha()) {
-				System.out.println("Nome de usuário ou senha incorretos! ");
+			for (Usuario usuario : list) {
+				if (nome.equals(usuario.getNome()) != true && senha.equals(usuario.getSenha()) != true) {
+					System.out.println("Nome de usuário ou senha incorretos! ");
+				} else if (nome.equals(usuario.getNome()) == true && senha.equals(usuario.getSenha()) == true) {
+					aux = true;
+				}
 			}
-			System.out.println("Seja bem vindo ao programa! ");
-		}
+		} while (aux == false);
+		System.out.println("Seja bem vindo! ");
+
 	}
 }
