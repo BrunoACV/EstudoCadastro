@@ -7,10 +7,17 @@ import java.util.Scanner;
 import entities.Usuario;
 
 public class Program {
+	static Scanner sc = new Scanner(System.in);
+	static List<Usuario> list = new ArrayList<>();
 
 	public static void main(String[] args) {
-		List<Usuario> usuario = new ArrayList<>();
-		Scanner sc = new Scanner(System.in);
+		cadastro();
+		login();
+
+	}
+
+	public static void cadastro() {
+
 		String senha;
 		String senhaVal;
 		System.out.println("Bem vindo! ");
@@ -27,16 +34,28 @@ public class Program {
 			senhaVal = sc.nextLine();
 
 			if (senhaVal.equals(senha)) {
-				usuario.add(new Usuario(nome, email, senha));
+				list.add(new Usuario(nome, email, senha));
 			} else {
 				System.out.println("Senha incorreta! ");
 
 			}
 		} while (senhaVal.equals(senha) != true);
 		System.out.println("Cadastro realizado com sucesso! ");
-		System.out.println(usuario);
+		System.out.println(list);
 
-		sc.close();
 	}
 
+	public static void login() {
+		System.out.print("Informe o nome de usuário: ");
+		String nome = sc.nextLine();
+		System.out.print("Informe a senha: ");
+		String senha = sc.nextLine();
+
+		for (Usuario usuario : list) {
+			if (nome != usuario.getNome() && senha != usuario.getSenha()) {
+				System.out.println("Nome de usuário ou senha incorretos! ");
+			}
+			System.out.println("Seja bem vindo ao programa! ");
+		}
+	}
 }
