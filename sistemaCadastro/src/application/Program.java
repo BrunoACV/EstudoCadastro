@@ -22,14 +22,17 @@ public class Program {
 
 		System.out.print("Digite a sua senha: ");
 		senha = sc.nextLine();
-		System.out.print("Confirme a senha: ");
-		senhaVal = sc.nextLine();
+		do {
+			System.out.print("Confirme a senha: ");
+			senhaVal = sc.nextLine();
 
-		if (senhaVal.equals(senha)) {
-			usuario.add(new Usuario(nome, email, senha));
-		} else {
-			System.out.println("Senha incorreta! ");
-		}
+			if (senhaVal.equals(senha)) {
+				usuario.add(new Usuario(nome, email, senha));
+			} else {
+				System.out.println("Senha incorreta! ");
+
+			}
+		} while (senhaVal.equals(senha) != true);
 		System.out.println("Cadastro realizado com sucesso! ");
 		System.out.println(usuario);
 
