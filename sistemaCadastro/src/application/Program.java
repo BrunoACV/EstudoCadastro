@@ -11,9 +11,32 @@ public class Program {
 	static List<Usuario> list = new ArrayList<>();
 
 	public static void main(String[] args) {
-		cadastro();
-		login();
 
+		opcoes();
+
+	}
+
+	public static void opcoes() {
+
+		System.out.println("1=Realizar cadastro:\n2=Realizar login:");
+		Integer op = 0;
+		do {
+			op = sc.nextInt();
+			sc.nextLine();
+
+			switch (op) {
+			case 1:
+				cadastro();
+				break;
+			case 2:
+				login();
+				break;
+
+			default:
+
+				break;
+			}
+		} while (true);
 	}
 
 	public static void cadastro() {
@@ -46,6 +69,7 @@ public class Program {
 	}
 
 	public static void login() {
+
 		boolean aux = false;
 		do {
 			System.out.print("Informe o nome de usuário: ");
@@ -64,4 +88,5 @@ public class Program {
 		System.out.println("Seja bem vindo! ");
 
 	}
+
 }
