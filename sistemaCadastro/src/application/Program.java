@@ -11,13 +11,10 @@ public class Program {
 	static List<Usuario> list = new ArrayList<>();
 
 	public static void main(String[] args) {
-
 		opcoes();
-
 	}
 
 	public static void opcoes() {
-
 		System.out.println("1=Realizar cadastro:\n2=Realizar login:");
 		Integer op = 0;
 		do {
@@ -43,7 +40,7 @@ public class Program {
 
 		String senha;
 		String senhaVal;
-		System.out.println("Bem vindo! ");
+		System.out.print("Bem vindo! ");
 
 		System.out.print("Informe o seu nome: ");
 		String nome = sc.nextLine();
@@ -79,13 +76,12 @@ public class Program {
 
 			for (Usuario usuario : list) {
 				if (nome.equals(usuario.getNome()) == false || senha.equals(usuario.getSenha()) == false) {
-					System.out.println("Nome de usuário ou senha incorretos! ");
 				} else
 					aux = true;
 
 			}
 		} while (aux == false);
-		System.out.println("Seja bem vindo! ");
+		System.out.println("Login efetuado com sucesso! ");
 
 	}
 
