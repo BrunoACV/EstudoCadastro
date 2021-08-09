@@ -78,7 +78,7 @@ public class Program {
 			String senha = sc.nextLine();
 
 			for (Usuario usuario : list) {
-				if (nome.equals(usuario.getNome()) != true || senha.equals(usuario.getSenha()) != true) {
+				if (nome.equals(usuario.getNome()) != true && senha.equals(usuario.getSenha()) != true) {
 					System.out.println("Nome de usuário ou senha incorretos! ");
 				} else if (nome.equals(usuario.getNome()) == true && senha.equals(usuario.getSenha()) == true) {
 					aux = true;
