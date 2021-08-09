@@ -78,11 +78,11 @@ public class Program {
 			String senha = sc.nextLine();
 
 			for (Usuario usuario : list) {
-				if (nome.equals(usuario.getNome()) != true && senha.equals(usuario.getSenha()) != true) {
+				if (nome.equals(usuario.getNome()) == false || senha.equals(usuario.getSenha()) == false) {
 					System.out.println("Nome de usuário ou senha incorretos! ");
-				} else if (nome.equals(usuario.getNome()) == true && senha.equals(usuario.getSenha()) == true) {
+				} else
 					aux = true;
-				}
+
 			}
 		} while (aux == false);
 		System.out.println("Seja bem vindo! ");
