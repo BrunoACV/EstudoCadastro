@@ -90,12 +90,48 @@ public class Program {
 
 				}
 			} while (aux == false);
-			System.out.println("Login efetuado com sucesso! ");
+			System.out.println("Login efetuado com sucesso!");
+			funcaoLogado();
 		} catch (Exception e) {
 			System.out.println("Ocorreu um erro inesperado, tente novamente.");
 
 		}
 
+	}
+
+	public static void funcaoSoma() {
+		System.out.print("Digite os dois valores para a soma: ");
+		int n1 = sc.nextInt();
+		int n2 = sc.nextInt();
+
+		int soma = n1 + n2;
+		System.out.println("Resultado: " + soma);
+		sc.nextLine();
+		opcoes();
+	}
+
+	public static void funcaoLogado() {
+		try {
+			System.out.println("1=Realizar soma:");
+			String op;
+			do {
+				op = sc.nextLine();
+
+				switch (op) {
+				case "1":
+					funcaoSoma();
+					break;
+
+				default:
+					System.out.println("Informe uma operação válida.");
+					break;
+				}
+
+			} while (true);
+		} catch (Exception e) {
+			System.out.println("Ocorreu um erro inesperado, tente novamente.");
+
+		}
 	}
 
 }
