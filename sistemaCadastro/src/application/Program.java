@@ -11,10 +11,10 @@ public class Program {
 	static List<Usuario> list = new ArrayList<>();
 
 	public static void main(String[] args) {
-		opcoes();
+		menu();
 	}
 
-	public static void opcoes() {
+	public static void menu() {
 		try {
 			System.out.println("1=Realizar cadastro:\n2=Realizar login:");
 			String op;
@@ -46,7 +46,7 @@ public class Program {
 		try {
 			String senha;
 			String senhaVal;
-			System.out.print("Bem vindo! ");
+			System.out.println("Bem vindo!");
 
 			System.out.print("Informe o seu nome: ");
 			String nome = sc.nextLine();
@@ -62,12 +62,11 @@ public class Program {
 				if (senhaVal.equals(senha)) {
 					list.add(new Usuario(nome, email, senha));
 				} else {
-					System.out.println("Senha incorreta! ");
+					System.out.println("Senha incorreta!");
 
 				}
 			} while (senhaVal.equals(senha) != true);
 			System.out.println("Cadastro realizado com sucesso! ");
-			System.out.println(list);
 		} catch (Exception e) {
 			System.out.println("Ocorreu um erro inesperado, tente novamente.");
 		}
@@ -107,12 +106,12 @@ public class Program {
 		int soma = n1 + n2;
 		System.out.println("Resultado: " + soma);
 		sc.nextLine();
-		opcoes();
+		menu();
 	}
 
 	public static void funcaoLogado() {
 		try {
-			System.out.println("1=Realizar soma:");
+			System.out.println("1=Realizar soma:\n2=Listar Dados de usuários cadastrados:");
 			String op;
 			do {
 				op = sc.nextLine();
@@ -120,6 +119,9 @@ public class Program {
 				switch (op) {
 				case "1":
 					funcaoSoma();
+					break;
+				case "2":
+					listarDados();
 					break;
 
 				default:
@@ -132,6 +134,11 @@ public class Program {
 			System.out.println("Ocorreu um erro inesperado, tente novamente.");
 
 		}
+	}
+
+	public static void listarDados() {
+		
+		System.out.println(list);
 	}
 
 }
